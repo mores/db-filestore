@@ -1,0 +1,11 @@
+<Context path="/webdav-servlet-db" reloadable="true" >
+
+	<Resource name="jdbc/webdavDBPool" auth="Container" type="javax.sql.DataSource"
+               factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+               maxActive="100" minIdle="1" maxIdle="5" maxWait="10000"
+               driverClassName="org.apache.derby.jdbc.EmbeddedDriver"
+               url="jdbc:derby:target/derbyTest;create=true"
+               testOnBorrow="true"
+        />
+
+</Context>

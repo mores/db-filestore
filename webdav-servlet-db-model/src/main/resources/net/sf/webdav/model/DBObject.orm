@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE orm PUBLIC "-//Sun Microsystems, Inc.//DTD Java Data Objects Metadata 2.0//EN" "http://java.sun.com/dtd/orm_2_0.dtd" >
+<orm>
+
+    <package name="net.sf.webdav.model">
+        
+        <class name="DBObject" table="fs_obj" identity-type="application" detachable="true" >
+            <inheritance strategy="new-table"/>
+
+            <field name="id" />
+            <field name="checksum" indexed="unique" null-value="exception" >
+                <column length="255" jdbc-type="VARCHAR" />
+            </field>
+            <field name="path" >
+                <column length="1024" jdbc-type="VARCHAR" />
+            </field>
+            <field name="name" >
+                <column length="255" jdbc-type="VARCHAR" />
+            </field>
+            <field name="creation" />
+            <field name="lastModified" />
+        </class>
+
+    </package>
+
+</orm>

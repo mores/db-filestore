@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="webdav-servlet-db">
+
+    <skin>
+        <groupId>org.apache.maven.skins</groupId>
+        <artifactId>maven-stylus-skin</artifactId>
+    </skin>
+
+    <bannerLeft>
+        <name>db-filestore</name>
+        <src>images/logo.png</src>
+        <href>http://db-filestore.sourceforge.net</href>
+    </bannerLeft>
+
+    <poweredBy>
+        <logo name="Datanucleus" href="http://www.datanucleus.org" img="http://www.datanucleus.org/images/logos/DataNucleus16-150.jpg"/>
+        <logo name="Maven" href="http://maven.apache.org/" img="http://maven.apache.org/images/logos/maven-feather.png"/>
+        <logo name="SourceForge" href="http://sourceforge.net" img="http://sflogo.sourceforge.net/sflogo.php?group_id=222902&amp;type=3" />
+    </poweredBy>
+
+    <body>
+
+        <breadcrumbs>
+            <item href="http://db-filestore.sourceforge.net" name="db-filestore"/>
+            <item href="http://db-filestore.sourceforge.net/webdav-servlet-db" name="webdav-servlet-db"/>
+        </breadcrumbs>
+
+        <links>
+            <item name="webdav-servlet" href="http://webdav-servlet.sourceforge.net/" />
+        </links>
+
+        <menu name="webdav-servlet-db">
+            <item name="FAQ" href="/faq.html"/>
+        </menu>
+
+        ${reports}
+
+    </body>
+</project>

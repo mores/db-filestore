@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<faqs title="FAQ for webdav-servlet-db">
+
+    <part id="about"> 
+    <faq> 
+      <question>What exactly is this project ?</question> 
+      <answer> 
+        <p> 
+          This project provides a database storage module for webdav-servlet: http://webdav-servlet.sourceforge.net/
+        </p> 
+
+      </answer> 
+    </faq>
+ 
+
+    <faq> 
+      <question>What databases are supported ? </question> 
+      <answer> 
+        <p> 
+          Any database that is supported by Datanucleus: http://www.datanucleus.org/products/accessplatform_1_0/rdbms/support.html
+        </p> 
+
+        <p>
+            Currently: MySQL, SQL Server, Oracle, Sybase, HSQL, PostgreSQL, Pointbase, Derby, DB2, Firebird, MaxDB, Informix.
+        </p>
+      </answer> 
+    </faq> 
+  </part> 
+</faqs>

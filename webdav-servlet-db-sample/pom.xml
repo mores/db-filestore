@@ -1,0 +1,73 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>net.sf.webdav-servlet</groupId>
+	<artifactId>webdav-servlet-db-sample</artifactId>
+	<packaging>war</packaging>
+	<version>2.0.0</version>
+	<name>WebDAV-Servlet</name>
+	<description>
+		An servlet implementing the webdav protocoll and supports pluggable underlaying storage systems.
+	</description>
+	<url>http://sourceforge.net/projects/webdav-servlet</url>
+
+    <properties>
+	<derby.version>10.4.1.3</derby.version>
+        <webdav-servlet.version>2.0</webdav-servlet.version>
+        <webdav-servlet-db.version>2.0.0</webdav-servlet-db.version>
+        <slf4j.version>1.5.6</slf4j.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>datanucleus</id>
+            <name>Datanucleus Repository</name>
+            <url>http://www.datanucleus.org/downloads/maven2</url>
+        </repository> 
+    </repositories>
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>LICENSE.txt</url>
+		</license>
+	</licenses>
+
+	<dependencies>
+	<dependency>
+		<groupId>org.apache.tomcat</groupId>
+		<artifactId>tomcat-jdbc</artifactId>
+		<version>7.0.19</version>
+	</dependency>
+
+	<dependency>
+            <groupId>org.apache.derby</groupId>
+            <artifactId>derby</artifactId>
+            <version>${derby.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.sf.webdav-servlet</groupId>
+            <artifactId>webdav-servlet</artifactId>
+            <version>${webdav-servlet.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.sf.webdav-servlet</groupId>
+            <artifactId>webdav-servlet-db</artifactId>
+            <version>${webdav-servlet-db.version}</version>
+        </dependency>
+	</dependencies>
+
+    <build>
+        <finalName>webdav-servlet-db</finalName>
+    </build>
+
+</project>

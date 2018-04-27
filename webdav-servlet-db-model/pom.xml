@@ -1,0 +1,148 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>net.sf.webdav-servlet</groupId>
+	<artifactId>webdav-servlet-db-model</artifactId>
+	<packaging>jar</packaging>
+	<version>2.0.0</version>
+	<name>WebDAV-Servlet-DB-Model</name>
+	<description>
+		A model objects used in a DataBase storage for webdav-servlet.
+	</description>
+	<url>http://db-filestore.sourceforge.net/webdav-servlet-db-model/</url>
+
+    <scm>
+        <connection>scm:svn:https://db-filestore.svn.sourceforge.net/svnroot/db-filestore/main/webdav-servlet-db-model/</connection>
+        <url>http://db-filestore.svn.sourceforge.net/viewvc/db-filestore/main/webdav-servlet-db-model/</url>
+    </scm>
+
+    <issueManagement>
+        <system>SF Tracker</system>
+        <url>http://sourceforge.net/tracker/?group_id=222902</url>
+    </issueManagement>
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+
+    <distributionManagement>
+        <site>
+            <id>sf</id>
+            <url>scp://shell.sourceforge.net/home/groups/d/db/db-filestore/htdocs/${pom.artifactId}</url>
+        </site>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>datanucleus</id>
+            <name>Datanucleus Repository</name>
+            <url>http://www.datanucleus.org/downloads/maven2</url>
+        </repository> 
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>datanucleus</id>
+            <name>Datanucleus Repository</name>
+            <url>http://www.datanucleus.org/downloads/maven2</url>
+        </pluginRepository> 
+    </pluginRepositories>
+
+	<dependencies>
+        <dependency>
+            <groupId>javax.jdo</groupId>
+            <artifactId>jdo2-api</artifactId>
+            <version>2.3-eb</version>
+        </dependency>    
+	</dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.datanucleus</groupId>
+                <artifactId>maven-datanucleus-plugin</artifactId>
+                <version>2.0.1</version>
+                <configuration>
+                    <log4jConfiguration>${basedir}/src/test/resources/log4j.xml</log4jConfiguration>
+                    <verbose>true</verbose>
+                    <mappingIncludes>**/*.class</mappingIncludes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>enhance</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <reporting>
+        <plugins>
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>dependencies</report>
+                            <report>issue-tracking</report>
+                            <report>license</report>
+                            <report>mailing-list</report>
+                            <report>index</report>
+                            <report>scm</report>
+                            <report>summary</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-javadoc-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <configuration>
+                    <threshold>Low</threshold>
+                    <effort>Max</effort>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <configuration>
+                    <configLocation>checkstyle.xml</configLocation>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </reporting>
+</project>
